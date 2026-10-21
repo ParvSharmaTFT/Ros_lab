@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="line_follower">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="-0.0075918946700384 -4.44089209850063E-16 -0.00713951178349159"
+        rpy="0 0 0" />
+      <mass
+        value="0.100515235465146" />
+      <inertia
+        ixx="4.9396325872263E-05"
+        ixy="4.29669252894244E-19"
+        ixz="-1.18751049241419E-18"
+        iyy="0.000176817707530233"
+        iyz="1.80987763434808E-14"
+        izz="0.000222570729896727" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://line_follower/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 0.3" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://line_follower/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="left_wheel">
+    <inertial>
+      <origin
+        xyz="2.27139063113668E-09 -3.24453020006388E-08 -0.00737294168874181"
+        rpy="0 0 0" />
+      <mass
+        value="0.02140421984347" />
+      <inertia
+        ixx="8.62831877556453E-06"
+        ixy="-3.38017045012741E-12"
+        ixz="3.14321395351183E-13"
+        iyy="8.62688078965145E-06"
+        iyz="-9.89545680070807E-12"
+        izz="1.45151853032917E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://line_follower/meshes/left_wheel.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.894117647058823 0.894117647058823 0.894117647058823 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://line_follower/meshes/left_wheel.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="leftwheel"
+    type="continuous">
+    <origin
+      xyz="-0.0337586915199681 0.07575 -0.0137500000000006"
+      rpy="-1.5707963267949 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="left_wheel" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      effort="10"
+      velocity="10" />
+    <dynamics
+      damping="0.1"
+      friction="0.1" />
+  </joint>
+  <link
+    name="right_wheel">
+    <inertial>
+      <origin
+        xyz="2.27139551611799E-09 3.24453195421626E-08 0.0073729416887407"
+        rpy="0 0 0" />
+      <mass
+        value="0.0214042198434857" />
+      <inertia
+        ixx="8.62831877556985E-06"
+        ixy="3.38016729448206E-12"
+        ixz="-3.143209324933E-13"
+        iyy="8.62688078965684E-06"
+        iyz="-9.89545792289448E-12"
+        izz="1.45151853033031E-05" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://line_follower/meshes/right_wheel.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.894117647058823 0.894117647058823 0.894117647058823 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://line_follower/meshes/right_wheel.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="rightwheel"
+    type="continuous">
+    <origin
+      xyz="-0.0337586915199652 -0.0757500000000004 -0.0137499999999964"
+      rpy="-1.5707963267949 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="right_wheel" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      effort="10"
+      velocity="10" />
+    <dynamics
+      damping="0.1"
+      friction="0.1" />
+  </joint>
+  <link
+    name="castor">
+    <inertial>
+      <origin
+        xyz="0.00235455649021032 5.31970296664408E-05 -0.00587901557792359"
+        rpy="0 0 0" />
+      <mass
+        value="0.0442610580755173" />
+      <inertia
+        ixx="4.03028933596686E-06"
+        ixy="-9.77267564433235E-10"
+        ixz="2.48052318082785E-07"
+        iyy="4.0965891242443E-06"
+        iyz="2.45566862777418E-09"
+        izz="7.14121652849108E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://line_follower/meshes/castor.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.898039215686275 0.898039215686275 0.898039215686275 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://line_follower/meshes/castor.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="castor_joint"
+    type="continuous">
+    <origin
+      xyz="0.0767413084800314 0 -0.00249999999999972"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="castor" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      effort="10"
+      velocity="10" />
+  </joint>
+  <link
+    name="castor_wheel">
+    <inertial>
+      <origin
+        xyz="2.62038168941103E-11 4.44089209850063E-16 -2.77710099361173E-09"
+        rpy="0 0 0" />
+      <mass
+        value="0.00828739992319066" />
+      <inertia
+        ixx="6.39299912774574E-07"
+        ixy="-5.35439018296775E-23"
+        ixz="-3.50834634007331E-09"
+        iyy="6.3926680927576E-07"
+        iyz="-2.78340256192331E-22"
+        izz="1.01108533248036E-06" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://line_follower/meshes/castor_wheel.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="1 1 1 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://line_follower/meshes/castor_wheel.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="castorwheel_joint"
+    type="continuous">
+    <origin
+      xyz="0.0150142056791569 0.000141668664297878 -0.0229601469749996"
+      rpy="-1.5707963267949 0 0" />
+    <parent
+      link="castor" />
+    <child
+      link="castor_wheel" />
+    <axis
+      xyz="-0.00943522163405569 0 0.999955487305668" />
+    <limit
+      effort="10"
+      velocity="10" />
+    <dynamics
+      damping="0.1"
+      friction="0.1" />
+  </joint>
+</robot>
